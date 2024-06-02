@@ -1,47 +1,28 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
+import { ref } from 'vue'
+import InputText from './components/InputText.vue'
+import InputCheckbox from './components/InputCheckbox.vue'
+
+const name = ref('')
+const newsletter = ref(false)
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
+  <div class="max-w-xl mx-auto py-12 px-6">
+    <h2 class="text-2xl font-semibold">v-model in Child Examples</h2>
+    <form class="mt-6">
+      <div class="mt-2">
+        <InputText placeholder="Name" v-model="name" />
+        <div class="mt-2">Name: {{ name }}</div>
+      </div>
 
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
-  </header>
-
-  <main>
-    <TheWelcome />
-  </main>
+      <div class="mt-8">
+        <label class="flex items-center">
+          <InputCheckbox v-model="newsletter" />
+          <span class="text-sm text-gray-700 ml-2"> Email me news and offers </span>
+        </label>
+        <div class="mt-2">Newsletter: {{ newsletter }}</div>
+      </div>
+    </form>
+  </div>
 </template>
-
-<style scoped>
-header {
-  line-height: 1.5;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-}
-</style>

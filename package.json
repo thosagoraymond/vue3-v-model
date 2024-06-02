@@ -11,6 +11,10 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "@tailwindcss/forms": "^0.5.7",
+    "@vueuse/core": "^10.10.0",
+    "postcss": "^8.4.38",
+    "tailwindcss": "^3.4.3",
     "vue": "^3.4.21"
   },
   "devDependencies": {
